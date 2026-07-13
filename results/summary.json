@@ -1,0 +1,50 @@
+{
+  "floor": {
+    "n": 2,
+    "overall_score": 0.0,
+    "per_axis_avg_1to5": {
+      "resolution": 1.0,
+      "grounding": 1.0,
+      "completeness": 1.0,
+      "tone": 1.0,
+      "clarity": 1.0
+    },
+    "guardrail_pass_rate": 0.0,
+    "score_by_category": {
+      "hr_recruiting": 0.0,
+      "request_info": 0.0
+    }
+  },
+  "model": {
+    "n": 2,
+    "overall_score": 0.0,
+    "per_axis_avg_1to5": {
+      "resolution": 1.0,
+      "grounding": 1.0,
+      "completeness": 1.0,
+      "tone": 1.0,
+      "clarity": 1.0
+    },
+    "guardrail_pass_rate": 100.0,
+    "score_by_category": {
+      "hr_recruiting": 0.0,
+      "request_info": 0.0
+    }
+  },
+  "reference": {
+    "n": 2,
+    "overall_score": 100.0,
+    "per_axis_avg_1to5": {
+      "resolution": 5.0,
+      "grounding": 5.0,
+      "completeness": 5.0,
+      "tone": 5.0,
+      "clarity": 5.0
+    },
+    "guardrail_pass_rate": 100.0,
+    "score_by_category": {
+      "hr_recruiting": 100.0,
+      "request_info": 100.0
+    }
+  }
+}
