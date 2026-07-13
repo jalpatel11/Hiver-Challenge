@@ -1,6 +1,6 @@
 {
   "floor": {
-    "n": 2,
+    "n": 20,
     "overall_score": 0.0,
     "per_axis_avg_1to5": {
       "resolution": 1.0,
@@ -12,39 +12,57 @@
     "guardrail_pass_rate": 0.0,
     "score_by_category": {
       "hr_recruiting": 0.0,
-      "request_info": 0.0
+      "request_info": 0.0,
+      "other": 0.0,
+      "negotiation_deal": 0.0,
+      "scheduling": 0.0,
+      "approval_review": 0.0,
+      "personal_social": 0.0,
+      "status_update": 0.0
     }
   },
   "model": {
-    "n": 2,
-    "overall_score": 0.0,
+    "n": 20,
+    "overall_score": 8.8,
     "per_axis_avg_1to5": {
-      "resolution": 1.0,
-      "grounding": 1.0,
-      "completeness": 1.0,
-      "tone": 1.0,
-      "clarity": 1.0
+      "resolution": 1.35,
+      "grounding": 1.35,
+      "completeness": 1.35,
+      "tone": 1.35,
+      "clarity": 1.35
     },
     "guardrail_pass_rate": 100.0,
     "score_by_category": {
-      "hr_recruiting": 0.0,
-      "request_info": 0.0
+      "hr_recruiting": 8.3,
+      "request_info": 8.3,
+      "other": 0.0,
+      "negotiation_deal": 8.3,
+      "scheduling": 0.0,
+      "approval_review": 12.5,
+      "personal_social": 25.0,
+      "status_update": 12.5
     }
   },
   "reference": {
-    "n": 2,
-    "overall_score": 100.0,
+    "n": 20,
+    "overall_score": 87.5,
     "per_axis_avg_1to5": {
-      "resolution": 5.0,
-      "grounding": 5.0,
-      "completeness": 5.0,
-      "tone": 5.0,
-      "clarity": 5.0
+      "resolution": 4.5,
+      "grounding": 4.5,
+      "completeness": 4.5,
+      "tone": 4.5,
+      "clarity": 4.5
     },
     "guardrail_pass_rate": 100.0,
     "score_by_category": {
       "hr_recruiting": 100.0,
-      "request_info": 100.0
+      "request_info": 66.7,
+      "other": 100.0,
+      "negotiation_deal": 100.0,
+      "scheduling": 75.0,
+      "approval_review": 75.0,
+      "personal_social": 75.0,
+      "status_update": 100.0
     }
   }
 }

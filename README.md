@@ -8,11 +8,11 @@ point of this exercise, so most of this README is spent on it: what
 how I checked that it actually tracks quality instead of just producing a
 number that looks plausible.
 
-It runs end to end either way. With an `ANTHROPIC_API_KEY` set, generation
-and judging both go through Claude. Without one, `python run.py --mock`
-runs the same pipeline offline with a deterministic stand-in, so anyone
-grading this can confirm it works in about a second without spending
-anything.
+It runs end to end either way. With an `LLM_API_KEY` set, generation
+and judging both go through the configured LLM provider (defaulting to Claude).
+Without one, `python run.py --mock` runs the same pipeline offline with a
+deterministic stand-in, so anyone grading this can confirm it works in about
+a second without spending anything.
 
 ## Running it
 
@@ -25,7 +25,7 @@ pip install -r requirements.txt
 #   pip install kaggle && python data/generate_dataset.py
 
 python run.py --mock                # offline, zero setup, proves the pipeline
-cp .env.example .env                # then add your ANTHROPIC_API_KEY for a real run
+cp .env.example .env                # then add your LLM_API_KEY for a real run
 python run.py                       # retrieval-grounded generation + LLM judge
 python run.py --k 4                 # tune retrieved examples per email
 python run.py --limit 3             # first 3 incoming emails only, cheap smoke test
@@ -35,6 +35,14 @@ Results land in `results/`: `report.md` is the human-readable summary,
 `summary.json` has the overall/per-axis/per-category numbers, and
 `scored.jsonl` has every reply for every system with full rubric rationales
 and which past emails grounded each one.
+
+### Switching LLM Providers
+
+Because the pipeline is built on LiteLLM, you can easily switch the underlying LLM provider (e.g., to OpenAI or Gemini) without modifying the generator or judge logic:
+
+1. In your `.env` file, set `LLM_API_KEY` to the API key for your target provider.
+2. Set `GEN_MODEL` and `JUDGE_MODEL` to valid LiteLLM model identifiers for that provider (e.g., `gpt-4o` for OpenAI, or `gemini/gemini-2.0-flash` for Gemini).
+3. Run the pipeline as usual: `python run.py`.
 
 ## 1. The dataset
 
@@ -305,8 +313,8 @@ cleaning filters, the retrieval approach, the five axes, thread-faithfulness
 as what grounding means here, the guardrails, the floor/ceiling check, are
 mine, and I read the raw CSV and looked at sampled rows myself before
 settling on the filters rather than working from a description of the data.
-At runtime the system calls the Anthropic API for both generation and
-judging, with the models configurable via `GEN_MODEL` and `JUDGE_MODEL`. The
+At runtime the system uses LiteLLM to call the configured model provider for
+both generation and judging, with the models configurable via `GEN_MODEL` and `JUDGE_MODEL`. The
 offline mock path uses only the Python standard library; the dataset
 builder uses the standard library plus the optional `kaggle` package for
 the one-time download.

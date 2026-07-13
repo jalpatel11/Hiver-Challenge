@@ -32,7 +32,12 @@ SYSTEM = (
     "4. If the new email lacks the detail needed to give a real answer, ask "
     "for the specific missing information instead of guessing or stalling.\n"
     "5. Be concise and direct, matching how these threads actually read. "
-    "Output only the email body, no subject line."
+    "Output only the email body, no subject line.\n"
+    "6. Write like the person in the examples actually would, not like an "
+    "AI assistant. No em dashes. Skip stock phrases like 'I hope this "
+    "email finds you well', 'I wanted to reach out', 'please don't "
+    "hesitate to', or 'let me know if you have any questions'. No "
+    "unnecessary hedging, no restating the question back before answering it."
 )
 
 USER_TMPL = (
